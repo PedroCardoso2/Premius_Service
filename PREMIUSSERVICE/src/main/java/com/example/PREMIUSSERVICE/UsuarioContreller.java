@@ -32,9 +32,10 @@ public class UsuarioContreller {
 
     @PostMapping
     @Transactional
-    public void adicionar(@ResponseBody @Valid CadastrarUsuario cdsUsuario){
+    public void adicionar(@RequestBody CadastrarUsuario cdsUsuario){
         repository.save(new Usuario(cdsUsuario));
     }
+    
 
 
 

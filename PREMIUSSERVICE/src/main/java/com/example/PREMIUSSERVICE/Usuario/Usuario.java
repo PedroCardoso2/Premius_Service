@@ -23,7 +23,10 @@ public class Usuario {
 
     public Usuario (CadastrarUsuario cadastrarUsuario){
         this.name = cadastrarUsuario.name();
-        this.
+        this.cpf = cadastrarUsuario.cpf();
+        this.senha = cadastrarUsuario.senha();
     }
+
+
 
 }

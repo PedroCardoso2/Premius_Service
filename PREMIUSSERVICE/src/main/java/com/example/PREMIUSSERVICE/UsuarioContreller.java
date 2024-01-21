@@ -1,9 +1,6 @@
 package com.example.PREMIUSSERVICE;
 
-import com.example.PREMIUSSERVICE.Usuario.CadastrarUsuarios;
-import com.example.PREMIUSSERVICE.Usuario.ListagemUsuarios;
-import com.example.PREMIUSSERVICE.Usuario.Usuarios;
-import com.example.PREMIUSSERVICE.Usuario.UsuarioJpaRepository;
+import com.example.PREMIUSSERVICE.Usuario.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,8 +21,9 @@ public class UsuarioContreller {
     }
 
     @GetMapping("/{id}")
-    public Usuarios encontrar(@PathVariable Long id) {
-        return repository.getReferenceById(id);
+    public UsuarioEncontra encontrar(@PathVariable Long id) {
+        Usuarios usuarios = repository.getReferenceById(id);
+        return new UsuarioEncontra(usuarios.getID(), usuarios.getSenha(), usuarios.getCPF(), usuarios.getNome());
     }
 
     @PostMapping
@@ -33,9 +31,5 @@ public class UsuarioContreller {
     public void adicionar(@RequestBody @Valid CadastrarUsuarios cdsUsuario){
         repository.save(new Usuarios(cdsUsuario));
     }
-
-
-
-
 
 }

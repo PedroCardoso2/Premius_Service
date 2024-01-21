@@ -2,15 +2,15 @@ package com.example.PREMIUSSERVICE.Usuario;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record CadastrarUsuario(
+public record CadastrarUsuarios(
         @NotBlank
-        String name,
+        String Nome,
 
         @NotBlank
-        String cpf,
+        String CPF,
 
         @NotBlank
-        String senha
+        String Senha
 
 ) {
 

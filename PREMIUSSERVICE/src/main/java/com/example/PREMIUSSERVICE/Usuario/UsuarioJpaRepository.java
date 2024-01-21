@@ -2,5 +2,5 @@ package com.example.PREMIUSSERVICE.Usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UsuarioJpaRepository extends JpaRepository<Usuario, Long> {
+public interface UsuarioJpaRepository extends JpaRepository<Usuarios, Long> {
 }

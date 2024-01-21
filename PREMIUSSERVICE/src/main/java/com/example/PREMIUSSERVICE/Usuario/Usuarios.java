@@ -1,5 +1,6 @@
 package com.example.PREMIUSSERVICE.Usuario;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -8,23 +9,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.annotation.processing.Generated;
-
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Usuario {
+public class Usuarios {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String cpf;
-    private String senha;
+    private Long ID;
+    private String Nome;
+    private String CPF;
+    private String Senha;
 
-    public Usuario (CadastrarUsuario cadastrarUsuario){
-        this.name = cadastrarUsuario.name();
-        this.cpf = cadastrarUsuario.cpf();
-        this.senha = cadastrarUsuario.senha();
+    public Usuarios(CadastrarUsuarios cadastrarUsuario){
+        this.Nome = cadastrarUsuario.Nome();
+        this.CPF = cadastrarUsuario.CPF();
+        this.Senha = cadastrarUsuario.Senha();
     }
 
 

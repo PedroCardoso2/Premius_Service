@@ -32,4 +32,11 @@ public class UsuarioContreller {
         repository.save(new Usuarios(cdsUsuario));
     }
 
+    @DeleteMapping("/{Id}")
+    @Transactional
+    public void deletar(@PathVariable Long id){
+        repository.deleteById(id);
+    }
+
+
 }

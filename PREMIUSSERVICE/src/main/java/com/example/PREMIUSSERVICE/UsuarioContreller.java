@@ -17,12 +17,12 @@ public class UsuarioContreller {
     private UsuarioJpaRepository repository;
 
     // BUSCAGEM GERAL
-    @GetMapping("/listagem")
+    @GetMapping("/list")
     public Page<ListagemUsuarios> listar(@PageableDefault(page = 0)Pageable pageable){
         return repository.findAll(pageable).map(ListagemUsuarios::new);
     }
     // BUSCAGEM ÚNICA
-    @GetMapping("/{id}")
+    @GetMapping("/list/{id}")
     public UsuarioEncontra encontrar(@PathVariable Long id) {
         Usuarios usuarios = repository.getReferenceById(id);
         return new UsuarioEncontra(usuarios.getID(), usuarios.getSenha(), usuarios.getCPF(), usuarios.getNome());
@@ -30,7 +30,7 @@ public class UsuarioContreller {
 
 
     //ADICIONAR
-    @PostMapping
+    @PostMapping("/add")
     @Transactional
     public void adicionar(@RequestBody @Valid CadastrarUsuarios cdsUsuario){
         repository.save(new Usuarios(cdsUsuario));
@@ -38,7 +38,7 @@ public class UsuarioContreller {
 
 
     //ATUALIZAÇÃO
-    @PutMapping
+    @PutMapping("/atlr")
     @Transactional
     public void atualizar(@RequestBody @Valid AtualizarUsuario atualizarUsuario){
         var usu = repository.getReferenceById(atualizarUsuario.ID());
@@ -47,7 +47,7 @@ public class UsuarioContreller {
 
 
     //DELETAR
-    @DeleteMapping("/{Id}")
+    @DeleteMapping("/del/{Id}")
     @Transactional
     public void deletar(@PathVariable Long id){
         repository.deleteById(id);

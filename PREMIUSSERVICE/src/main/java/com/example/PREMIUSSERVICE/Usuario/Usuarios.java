@@ -27,6 +27,10 @@ public class Usuarios {
         this.Senha = cadastrarUsuario.Senha();
     }
 
+    public void AtualizacaoUsuario(AtualizarUsuario dados){
+        if(dados.Nome() != null){this.Nome = dados.Nome();}
+        if(dados.Senha() != null){this.Senha = dados.Senha();}
+    }
 
 
 }

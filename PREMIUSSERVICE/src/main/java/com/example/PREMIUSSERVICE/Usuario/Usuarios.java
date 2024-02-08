@@ -1,4 +1,4 @@
-package com.example.PREMIUSSERVICE.Usuario;
+package com.example.premiusservice.Usuario;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.example.PREMIUSSERVICE.Usuario;
+package com.example.premiusservice.Usuario;
 
 public record ListagemUsuarios(Long ID, String Nome, String CPF, String Senha){
     public ListagemUsuarios(Usuarios usr){

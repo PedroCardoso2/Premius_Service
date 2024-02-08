@@ -1,4 +1,4 @@
-package com.example.PREMIUSSERVICE;
+package com.example.premiusservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

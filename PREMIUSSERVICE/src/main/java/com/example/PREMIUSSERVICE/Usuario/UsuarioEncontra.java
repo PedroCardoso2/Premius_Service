@@ -1,4 +1,4 @@
-package com.example.PREMIUSSERVICE.Usuario;
+package com.example.premiusservice.Usuario;
 
 public record UsuarioEncontra(Long ID, String Senha, String CPF, String Nome) {
     public UsuarioEncontra(Usuarios usr){
